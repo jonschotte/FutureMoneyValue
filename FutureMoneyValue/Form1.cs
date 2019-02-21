@@ -19,28 +19,27 @@ namespace FutureMoneyValue
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void Calculate(double cc)
         {
-
             //Convert all text entries from strings to double
-            double iv = Double.Parse(IVBox1.Text);
+            double iv = double.Parse(IVBox1.Text);
             double ir = double.Parse(IRBox2.Text);
             double ny = double.Parse(NYBox3.Text);
-            double pyc = double.Parse(PYCBox4.Text);
+            double pyc = cc;
 
             //Calculation for future value
             double p = (1 + (0.01 * ir));
             double c = ny * pyc;
-            double pw = Math.Pow(p, c);
+            double pw = Math.Pow(p, c); //function used to raise to a power
             double fv = iv * pw;
-            
+
             //Convert answer back to string
             string Answer = fv.ToString();
             FIVBox5.Text = Answer;
 
-            //MessageBox.Show("All Done!");
         }
 
+        
         private void FutureMoneyValueLable_OnClick(object sender, EventArgs e)
         {
 
@@ -74,6 +73,49 @@ namespace FutureMoneyValue
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //pass Calculate the double 365 representing compounded daily
+        private void dailyButton_Click(object sender, EventArgs e)
+
+        {
+            double cc = 365;
+            Calculate(cc);
+        }
+
+        //pass Calculate the double 52 representing compounded weekly
+        private void weekButton_Click(object sender, EventArgs e)
+        {
+            double cc = 52;
+            Calculate(cc);
+        }
+
+        //pass Calculate the double 12 representing compounded monthly
+        private void monthButton_Click(object sender, EventArgs e)
+        {
+            double cc = 12;
+            Calculate(cc);
+        }
+
+        //pass Calculate the double 4 representing compounded quarterly
+        private void quarterButton_Click(object sender, EventArgs e)
+        {
+            double cc = 4;
+            Calculate(cc);
+        }
+
+        //pass Calculate the double 2 representing compounded biannually
+        private void biannualButton_Click(object sender, EventArgs e)
+        {
+            double cc = 2;
+            Calculate(cc);
+        }
+
+        //pass Calculate the double 1 representing compounded yearly
+        private void yearButton_Click(object sender, EventArgs e)
+        {
+            double cc = 1;
+            Calculate(cc);
         }
     }
 }
