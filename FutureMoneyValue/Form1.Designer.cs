@@ -120,9 +120,9 @@ namespace FutureMoneyValue
             // 
             // FIVBox5
             // 
-            this.FIVBox5.Location = new System.Drawing.Point(352, 354);
+            this.FIVBox5.Location = new System.Drawing.Point(287, 344);
             this.FIVBox5.Name = "FIVBox5";
-            this.FIVBox5.Size = new System.Drawing.Size(111, 22);
+            this.FIVBox5.Size = new System.Drawing.Size(229, 22);
             this.FIVBox5.TabIndex = 8;
             // 
             // label1
