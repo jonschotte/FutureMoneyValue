@@ -54,9 +54,9 @@ namespace FutureMoneyValue
             this.InitialInvestmentLabel.AutoSize = true;
             this.InitialInvestmentLabel.Location = new System.Drawing.Point(554, 165);
             this.InitialInvestmentLabel.Name = "InitialInvestmentLabel";
-            this.InitialInvestmentLabel.Size = new System.Drawing.Size(134, 17);
+            this.InitialInvestmentLabel.Size = new System.Drawing.Size(150, 17);
             this.InitialInvestmentLabel.TabIndex = 1;
-            this.InitialInvestmentLabel.Text = "Initial Investment ($)";
+            this.InitialInvestmentLabel.Text = "1. Initial Investment ($)";
             this.InitialInvestmentLabel.Click += new System.EventHandler(this.InitialInvestmentLabel_Click);
             // 
             // InterestRateLabel
@@ -64,9 +64,9 @@ namespace FutureMoneyValue
             this.InterestRateLabel.AutoSize = true;
             this.InterestRateLabel.Location = new System.Drawing.Point(554, 191);
             this.InterestRateLabel.Name = "InterestRateLabel";
-            this.InterestRateLabel.Size = new System.Drawing.Size(115, 17);
+            this.InterestRateLabel.Size = new System.Drawing.Size(131, 17);
             this.InterestRateLabel.TabIndex = 1;
-            this.InterestRateLabel.Text = "Interest Rate (%)";
+            this.InterestRateLabel.Text = "2. Interest Rate (%)";
             // 
             // CompoundLabel
             // 
@@ -82,9 +82,9 @@ namespace FutureMoneyValue
             this.YearsLabel.AutoSize = true;
             this.YearsLabel.Location = new System.Drawing.Point(554, 219);
             this.YearsLabel.Name = "YearsLabel";
-            this.YearsLabel.Size = new System.Drawing.Size(115, 17);
+            this.YearsLabel.Size = new System.Drawing.Size(131, 17);
             this.YearsLabel.TabIndex = 1;
-            this.YearsLabel.Text = "Number of Years";
+            this.YearsLabel.Text = "3. Number of Years";
             // 
             // FutureMoneyValue
             // 
@@ -146,6 +146,7 @@ namespace FutureMoneyValue
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(34, 94);
@@ -221,7 +222,7 @@ namespace FutureMoneyValue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 477);
+            this.ClientSize = new System.Drawing.Size(744, 477);
             this.Controls.Add(this.yearButton);
             this.Controls.Add(this.biannualButton);
             this.Controls.Add(this.quarterButton);

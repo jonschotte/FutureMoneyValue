@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 
 
@@ -21,21 +23,37 @@ namespace FutureMoneyValue
 
         public void Calculate(double cc)
         {
-            //Convert all text entries from strings to double
-            double iv = double.Parse(IVBox1.Text);
-            double ir = double.Parse(IRBox2.Text);
-            double ny = double.Parse(NYBox3.Text);
-            double pyc = cc;
 
-            //Calculation for future value
-            double p = (1 + (0.01 * ir));
-            double c = ny * pyc;
-            double pw = Math.Pow(p, c); //function used to raise to a power
-            double fv = iv * pw;
+            try //tests all of the input to make sure there are only numbers inputed
+            {
+                //Convert all text entries from strings to double
+                double iv = double.Parse(IVBox1.Text);
+                double ir = double.Parse(IRBox2.Text);
+                double ny = double.Parse(NYBox3.Text);
+                double pyc = cc;
 
-            //Convert answer back to string
-            string Answer = fv.ToString();
-            FIVBox5.Text = Answer;
+
+                //Calculation for future value
+                double p = (1 + (0.01 * ir));
+                double c = ny * pyc;
+                double pw = Math.Pow(p, c); //function used to raise to a power
+                double fv = iv * pw;
+
+                //Convert answer back to string
+                string Answer = fv.ToString();
+                FIVBox5.Text = Answer;
+            }
+            catch (System.FormatException)
+            {
+                //Clears all of the boxes
+                IVBox1.Text = "";
+                IRBox2.Text = "";
+                NYBox3.Text = "";
+
+                //Opens Error Window (Form2)
+                var error = new Form2();
+                error.Show(this);
+            }
 
         }
 
@@ -79,8 +97,10 @@ namespace FutureMoneyValue
         private void dailyButton_Click(object sender, EventArgs e)
 
         {
+           
             double cc = 365;
             Calculate(cc);
+          
         }
 
         //pass Calculate the double 52 representing compounded weekly
@@ -117,5 +137,7 @@ namespace FutureMoneyValue
             double cc = 1;
             Calculate(cc);
         }
+
+
     }
 }
